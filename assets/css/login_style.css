@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+
+/* Login Page */
+
+/* background */
+
+main{
+    background: #D9D0E3; 
+}
+
+/* Login Card */
+
+.card{
+    border-radius: 15px;
+}
+
+.login-header{
+    background: #3E3743;
+    color: #DBCAE8;
+    border-radius: 15px 15px 0 0;
+    border-top: 1px solid;
+}
+
+.btn{
+    font-weight: bold;
+}
+
+.btn-submit{
+    background-color: #D9D0E3;
+    color: #3E3743;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    background-color: #bdb7c5;
+    outline: none;
+}
+
+.btn-outline {
+    max-width: 8.125rem;
+    border-radius: 25px !important;
+    background-color: #D9D0E3; /* Default unselected color */
+    border-color: #D9D0E3;
+    color: #000; /* Text color */
+}
+
+/* Styles when the radio button is checked */
+.btn-check:checked + .btn-outline {
+    background-color: #614883; /* Selected color */
+    border-color: #614883;
+    color: #fff; /* Text color for the selected state */
+}
+
+/* Additional styles to ensure proper hover and active states */
+.btn-outline:hover {
+    background-color: #bdb7c5 !important;
+    color: #fff;
+}

@@ -1,0 +1,493 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI';
+}
+
+
+body{
+  background: #D9D0E3;
+}
+
+/*--------------------------------------------------------------
+# Header Nav
+--------------------------------------------------------------*/
+#header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 65px;
+  line-height: 34px;
+  background-color: #fff;
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+} 
+
+.header-nav ul {
+  list-style: none;
+}
+
+.header-nav>ul {
+  background: #D9D0E3;
+  margin: 0;
+  padding: 4px 6px;
+  border-radius: 25px;
+}
+
+.header-nav .nav-icon {
+  font-size: 22px;
+  color: #012970;
+  margin-right: 25px;
+  position: relative;
+}
+
+.header-nav .nav-profile {
+  color: #012970;
+}
+
+.header-nav .nav-profile img {
+  max-height: 36px;
+}
+
+.header-nav .nav-profile span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-nav .profile {
+  min-width: 240px;
+  padding-bottom: 0;
+  top: 8px !important;
+}
+
+.header-nav .dropdown{
+  padding: 2px;
+}
+
+.header-nav .profile .dropdown-header h6 {
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #444444;
+}
+
+.header-nav .profile .dropdown-header span {
+  font-size: 14px;
+}
+
+.header-nav .profile .dropdown-item {
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.header-nav .profile .dropdown-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 0;
+}
+
+.header-nav .profile .dropdown-item:hover {
+  background-color: #f6f9ff;
+  padding-right: 2px;
+}
+
+.logo-bg{
+  background-color: #614883;
+  padding-right: 2.55rem;
+  transition: background-color 0.7s ease/* Smooth transition for the styles */
+}
+
+.logo-bg.toggled {
+  background-color: #ffffff;
+  padding-right: 2.55rem;
+  transition: background-color 0.7s ease /* Smooth transition for the styles */
+}
+
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+
+.sidebar {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 996;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: #3E3743;
+}
+
+@media (max-width: 1199px) {
+  .sidebar {
+    left: -300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #main,
+  #footer {
+    margin-left: 300px;
+  }
+
+  .toggle-sidebar #main,
+  .toggle-sidebar #footer {
+    margin-left: 0;
+  }
+
+  .toggle-sidebar .sidebar {
+    left: -300px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .toggle-sidebar .sidebar {
+    left: 0;
+  }
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #aab7cf;
+}
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-item {
+  margin-bottom: 5px;
+}
+
+.sidebar-nav .nav-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #899bbd;
+  font-weight: 600;
+  margin: 10px 0 5px 15px;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #3E3743;
+  transition: 0.3;
+  background: #DBCAE8;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #3E3743 !important;
+}
+
+.sidebar-nav .nav-link.collapsed {
+  color: #DBCAE8;
+  background: #3E3743;
+}
+
+.sidebar-nav .nav-link.collapsed i {
+  color: #DBCAE8 !important;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #3E3743 !important;
+  background: #DBCAE8;
+}
+
+.sidebar-nav .nav-link:hover i {
+  color: #3E3743 !important;
+}
+
+.sidebar-nav .nav-link .bi-chevron-down {
+  margin-left: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-content {
+  padding: 5px 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-content a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #DBCAE8;
+  text-decoration: none;
+  transition: 0.3;
+  padding: 10px 0 10px 40px;
+}
+
+.sidebar-nav .nav-content a i {
+  font-size: 6px;
+  margin-right: 8px;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.sidebar-nav .nav-content a:hover {
+  color: #3E3743 !important;
+  background: #DBCAE8;
+  border-radius: 4px;
+}
+
+.sidebar-nav .nav-content a:hover i.bi-circle {
+  color: #3E3743 !important;
+}
+
+.bi-list {
+  font-size: 20px;
+  padding: 1rem;
+}
+
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+#main {
+  margin-top: 60px;
+  padding: 20px 30px;
+  transition: all 0.3s;
+  background: #D9D0E3;
+  min-height: calc(100vh - 65px);
+}
+
+@media (max-width: 1199px) {
+  #main {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  #main,
+  #footer {
+    margin-left: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .toggle-sidebar #main,
+  .toggle-sidebar #footer {
+    margin-left: 0;
+  }
+
+  .toggle-sidebar .sidebar {
+    left: -300px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Page Section
+--------------------------------------------------------------*/
+
+.bi,
+i {
+  color: #DBCAE8 !important;
+}
+
+.bi-caret-down-fill {
+  color: #707070 !important;
+}
+
+.page {
+  position: relative;
+  display: block;
+  top: 50px;
+  left: 0;
+  padding: 20px 15px;
+}
+
+.card-dash {
+  flex-direction: row !important;
+}
+
+.text-muted {
+  padding: 1rem;
+}
+
+.card-icon {
+  background: #3E3743;
+}
+
+.card-header {
+  background-color: #3E3743;
+  color: #DBCAE8;
+  border-bottom: 2px solid #3498DB;
+  font-size: 15px !important;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 15px;
+}
+
+.card-header i{
+  font-size: 15px;;
+}
+
+
+
+.card-value {
+  width: 60%;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: 40%;
+  border-radius: 0;
+}
+
+.card-icon {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.card-value {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.card-value h2 {
+  margin-top: 30px;
+}
+
+.card-icon i {
+  line-height: 65px;
+  font-size: 40px;
+  color: #fff;
+}
+
+.card-bg {
+  background: #3E3743;
+}
+
+.btn-custom {
+  border-radius: 15px;
+  background: #D9D0E3;
+  color: #3E3743 !important;
+  font-weight: 700;
+  text-transform: none;
+
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+  background: #bdb7c5;
+}
+
+.bg-icon{
+  background: #3E3743;
+  padding: 7px 10px;
+}
+
+.form-product{
+  border-radius: 0px 5px 5px 0px;
+}
+
+.form-product:focus{
+  box-shadow: none;
+}
+
+/*--------------------------------------------------------------
+# Page Section
+--------------------------------------------------------------*/
+
+@media all and (min-width: 800px) {
+  .fancybox-thumbs {
+    top: auto;
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right : 0;
+    height: 95px;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    background: #000000;
+  }
+  
+  .fancybox-show-thumbs .fancybox-inner {
+    right: 0;
+    bottom: 95px;
+  }
+}
+
+.fancybox-thumbs__list{
+  margin: auto !important;
+}
+
+table.table-striped thead .view-th, .btn-custom2 {
+  background-color: rgb(69, 50, 95);
+  color: #DBCAE8;
+}
+
+.btn-custom2:hover, .btn-custom2:focus, .btn-outline-custom:hover , .btn-outline-custom:focus, .dropdown-item.active{
+  background-color: #614883;
+  color: #ffffff;
+}
+
+.btn-outline-custom, .text-custom{
+  border-color: #614883;
+  color: #614883;
+}
+
+.img-avatar{
+  width: 60px;
+  height: 60px;
+}
+
+.custom-pagination .page-link {
+  color: #614883;
+  background-color: transparent;
+  border-color: #614883;
+}
+
+.custom-pagination .page-link:hover {
+  color: #fff;
+  background-color: #614883;
+  border-color: #614883;
+}
+
+.custom-pagination .page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #614883;
+  border-color: #614883;
+}
+
+.table th i{
+  color: #000 !important;
+}
+
+
+
+
